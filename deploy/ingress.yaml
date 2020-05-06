@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: myblog
+  namespace: {{NAMESPACE}}
+spec:
+  rules:
+  - host: {{INGRESS_MYBLOG}}
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: myblog
+          servicePort: 80
